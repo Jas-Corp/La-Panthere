@@ -1,0 +1,14 @@
+//Rewrite to www
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^la-panthere.jasonpons.com[nc]
+RewriteRule ^(.*)$ http://www.la-panthere.jasonpons.com/$1 [r=301,nc]
+
+//301 Redirect Old File
+Redirect 301 /page2.html /contact.html
+
+//Caching schema
+<FilesMatch "\.(pjg|png|css)$">
+Header set Cache-Control "public, max-age=5184000"
+</FilesMatch>
+ 
